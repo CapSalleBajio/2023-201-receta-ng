@@ -1,0 +1,33 @@
+<div class="bg-white rounded-2xl shadow-md p-2 w-[350px] overflow-hidden">
+  <div class="relative">
+    <div class="absolute bottom-[15px] left-[15px]
+     bg-white p-2 shadow-lg inline-block
+     rounded-3xl text-center font-bold">{{ recipe.category }}</div>
+    <img class="mb-2 rounded-3xl" [src]="recipe.imageUrl" alt="Imagen de tacos gobernador">
+  </div> <!-- Imagen -->
+  <div class="px-3">
+    <div>
+      <div class="flex">
+        <img class="w-4 h-4 mr-1" src="./assets/img/time.gif" alt="">
+        <span class="text-slate-400 text-sm">{{ recipe.minutes }} minutos</span>
+      </div> <!-- Tiempo de receta -->
+    </div> <!-- Iconos y texto -->
+    <h3 class="text-slate-800 text-lg font-black mb-4">{{ recipe.title }}</h3>
+    <p class="text-slate-600 text-base">
+      <span>
+        <b>Ingredientes: <br></b>
+        <em>{{ recipe.ingredients }}</em>
+      </span>
+      <span class="block">
+        <b>Intrucciones: <br></b>
+        <ul>
+          <li
+          class="text-xs mb-[2px] mt-[2px]"
+          *ngFor="let instruction of this.recipe.instructions">
+          - {{ instruction }}
+        </li>
+        </ul>
+      </span>
+    </p>
+  </div> <!-- Detalles receta -->
+</div> <!-- Card -->

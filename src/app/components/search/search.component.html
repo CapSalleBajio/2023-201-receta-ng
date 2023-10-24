@@ -1,0 +1,28 @@
+<div class="flex bg-white rounded-3xl shadow-md p-4 mb-10">
+  <div class="flex w-full">
+    <input class="
+    grow-[1]
+    py-2 px-1
+     bg-slate-100
+     rounded-lg outline-none
+     border border-slate-300 hover:border-slate-950
+     transition-all
+     " type="text" placeholder="Ingresa tus ingredientes...">
+
+   <button
+
+    (click)="generateRecipe()"
+
+     class="
+   bg-teal-700
+   hover:bg-teal-900
+     transition-all
+    text-white rounded-lg
+    py-2 px-1 ml-2">
+
+    <loader [visible]="isLoading"></loader>
+    <span *ngIf="isLoading === false">Generar</span>
+
+  </button>
+  </div> <!-- Agrupa el input y el boton -->
+</div> <!-- Agrupa todos los elementos del buscador -->
